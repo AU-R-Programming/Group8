@@ -14,3 +14,57 @@
 # 7) Load the data class_survey.csv (available on Canvas>Files)
 
 # 8) Using the functions `barplot` and `table`, create barplots of the three variables in the loaded data. Comment.
+
+#question 1
+
+test <- rpois(n = 1, lambda = 5)
+
+#Question 2
+
+sqrt(test)*log(10)
+
+#Question 3
+
+install.packages("simts")
+
+#Question 4
+
+library("simts")
+
+set.seed(1337)
+n = 10^4
+wn <- gen_gts(n, WN(sigma2 = 1))
+qn <- gen_gts(n, QN(q2 = 0.5))
+rw <- gen_gts(n, RW(gamma2 = 0.75))
+
+#To plot graphs
+
+par(mfrow = c(3,1))
+plot(wn)
+plot(qn)
+plot(rw)
+
+#question 5
+
+devtools::install_github("SMAC-Group/irg")
+devtools::install_github("SMAC-Group/irg", build_vignettes = TRUE)
+
+#question 6
+
+library("irg")
+
+data(signals)
+times <- c(0, 5, 10, 15, 20, 30, 45, 60, 90, 120)
+granger_test(root = signals$root, shoot = signals$shoot, times = times, alternative= "twodir")
+
+#Question 7
+
+data1 <- read.csv("class_survey.csv")
+head(data1)
+
+#Question 8
+
+attach(data1)
+
+
+
