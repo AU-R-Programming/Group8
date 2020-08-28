@@ -68,12 +68,17 @@ granger_test(root = signals$root, shoot = signals$shoot, times = times, alternat
 
 #Question 7
 
-data1 <- read.csv("class_survey.csv")
+data1 <- read.csv("class_survey.csv", sep =",")
 head(data1)
 
 #Question 8
 
-attach(data1)
+
+barplot(table(data1$Programming.Experience))
+
+barplot(table(data1$R.Experience))
+
+barplot(table(data1$GitHub.Experience))
 
 
 
